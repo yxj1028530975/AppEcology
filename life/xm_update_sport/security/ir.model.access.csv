@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_xm_update_sport,xm_update_sport,model_xm_update_sport,base.group_user,1,1,1,1
+
+access_function_popup_wizard,function_popup_wizard,model_function_popup_wizard,base.group_user,1,1,1,1

@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <record id="xm_update_sport_view_form" model="ir.ui.view">
+            <field name="name">xm_update_sport_form</field>
+            <field name="model">xm.update_sport</field>
+            <field name="arch" type="xml">
+                <form string="修改步数表单">
+                    <header>
+                    <button string="修改步数" class="oe_highlight"
+                            name="run_script" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            
+                                <field name="account"/>
+                                <field name="password"/>
+                                <field name="update_steps"/>
+                                <field name="timing"/>
+                                <field name="login_token"/>
+                                <field name="app_token"/>
+                                <field name="user_id"/>
+
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="xm_update_sport_view_tree" model="ir.ui.view">
+            <field name="name">xm_update_sport_tree</field>
+            <field name="model">xm.update_sport</field>
+            <field name="arch" type="xml">
+                <tree string="修改步数列表">
+                    
+                        <field name="account"/>
+                        <field name="password"/>
+                        <field name="update_steps"/>
+                        <field name="timing"/>
+                        <field name="login_token"/>
+                        <field name="app_token"/>
+                        <field name="user_id"/>
+                        
+                </tree>
+            </field>
+        </record>
+
+        <record id="xm_update_sport_view_kanban" model="ir.ui.view">
+            <field name="name">xm_update_sport_kanban</field>
+            <field name="model">xm.update_sport</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" string="修改步数看板">
+                    
+                        <field name="account"/>
+                        <field name="password"/>
+                        <field name="update_steps"/>
+                        <field name="timing"/>
+                        
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                
+                                    <div class="col-6">
+                                            <strong><field name="account"/></strong>
+                                        </div>
+                                    <div class="col-6">
+                                            <strong><field name="password"/></strong>
+                                        </div>
+                                    <div class="col-6">
+                                            <strong><field name="update_steps"/></strong>
+                                        </div>
+                                    <div class="col-6">
+                                            <strong><field name="timing"/></strong>
+                                        </div>
+                                    
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="xm_update_sport_action_server" model="ir.actions.server">
+            <field name="name">运行脚本</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="xm_update_sport.model_xm_update_sport"/>
+            <field name="binding_model_id" ref="xm_update_sport.model_xm_update_sport"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.run_script()
+            </field>
+        </record>
+
+
+        <record id="xm_update_sport_action" model="ir.actions.act_window">
+            <field name="name">修改步数展示</field>
+            <field name="res_model">xm.update_sport</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+    </data>
+</odoo>

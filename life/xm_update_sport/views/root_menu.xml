@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="修改步数"
+              id="xm_update_sport_root_menu"
+              web_icon="xm_update_sport,static/description/icon.png"
+              action="xm_update_sport_action"
+              sequence="1" groups="xm_update_sport.group_house_user"/>
+</odoo>
