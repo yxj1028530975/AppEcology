@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-import requests
+import httpx
 from dataclasses import dataclass, field
-from odoo.exceptions import UserError, AccessError
 import re
 import time
 
@@ -29,7 +28,7 @@ class XMSport(object):
             "redirect_uri": "https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html",
             "token": "access"
         }
-        location_response = requests.post(url=location_url, data=location_data, headers=self.headers)
+        location_response = httpx.post(url=location_url, data=location_data, headers=self.headers)
         location = location_response.headers["Location"]
         if 'error' in location:
             print("登陆失败！")
@@ -47,7 +46,7 @@ class XMSport(object):
             "grant_type": "access_token",
             "third_name": "huami_phone",
         }
-        token_response = requests.post(url=token_url, data=token_data, headers=self.headers).json()
+        token_response = httpx.post(url=token_url, data=token_data, headers=self.headers).json()
         self.login_token = token_response["token_info"]["login_token"]
         self.user_id = token_response["token_info"]["user_id"]
         return True
@@ -58,14 +57,14 @@ class XMSport(object):
     # 获取时间戳
     def get_timestamp(self) -> str:
         url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
-        response = requests.get(url, headers=self.headers).json()
+        response = httpx.get(url, headers=self.headers).json()
         timestamp = response['data']['t']
         return timestamp
 
     # 获取app_token
     def get_app_token(self):
         url = f"https://account-cn.huami.com/v1/client/app_tokens?app_name=com.xiaomi.hm.health&dn=api-user.huami.com%2Capi-mifit.huami.com%2Capp-analytics.huami.com&login_token={self.login_token}"
-        response = requests.get(url, headers=self.headers).json()
+        response = httpx.get(url, headers=self.headers).json()
         app_token = response['token_info']['app_token']
         self.app_token = app_token
 
@@ -92,7 +91,7 @@ class XMSport(object):
         }
         data = f'userid={self.user_id}&last_sync_data_time=1597306380&device_type=0&last_deviceid=DA932FFFFE8816E7&data_json={data_json}'
 
-        response = requests.post(url, data=data, headers=headers).json()
+        response = httpx.post(url, data=data, headers=headers).json()
 
         return response
 
@@ -111,15 +110,13 @@ class XMSport(object):
                 login_information = {'login_token': self.login_token, 'app_token': self.app_token,
                                      'user_id': self.user_id}
                 response = self.update_steps()
-                state = {'state': response['message'], 'login_information':login_information}
+                state = {'state': response['message'], 'login_information': login_information}
         else:
             state = {'state': response['message']}
-        print(state)
         return state
 
 
 if __name__ == '__main__':
-
-    xm_sport = XMSport(user='***', password='***', step="555", login_token="login_token",
+    xm_sport = XMSport(user='***', password='***', step="1644", login_token="login_token",
                        app_token="app_token", user_id="user_id")
     xm_sport.main_run()

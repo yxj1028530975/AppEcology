@@ -21,7 +21,6 @@
     'data': [
         'security/ir.model.access.csv',
         'security/update_sport_security.xml',
-        'security/rules.xml',
         'views/xm_update_sport_views.xml',
         'wizard/function_popup_wizard.xml',
         'views/root_menu.xml',

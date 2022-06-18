@@ -11,7 +11,7 @@
 
 
 ## 已有功能
-1. 运动刷步数（微信，支付宝）
+1. 运动刷步数（微信，支付宝）：可通过接口调用
 2. 图床
 3. 每日更新面板
 4. 自动化（简陋版）
@@ -38,3 +38,11 @@
 
 [安装odoo15](https://github.com/odoo/odoo)  
 替换模块 替换 myaddons 有空完善
+
+## 更新日志
+2022-6-18 
+1.优化用户权限，分为用户和管理员
+![](http://124.221.153.111:8069//web/content/513?access_token=0d76d775-acb5-4a45-9c4b-34eafc1e3039)
+2.增加接口修改步数   例：http://124.221.153.111:8069/api/update?user=user&password=password&update_steps=update_steps 防止接口滥用，需要先在平台绑定账号
+
+![](http://124.221.153.111:8069//web/content/514?access_token=2de99a31-609a-4444-92f1-5c5bf294c7f2)
