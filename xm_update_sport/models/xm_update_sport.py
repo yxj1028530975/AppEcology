@@ -13,6 +13,11 @@ class XmUpdateSport(models.Model):
     login_token = fields.Char(string="login_token", default="login_token")
     app_token = fields.Char(string="app_token", default="app_token")
     user_id = fields.Char(string="user_id", default="user_id")
+    is_cron = fields.Boolean(string="启用",default=True)
+
+    # 定时器
+    def test_timing(self):
+        ...
 
     def test_button(self):
         ...

@@ -22,6 +22,7 @@
         'security/ir.model.access.csv',
         'security/update_sport_security.xml',
         'views/xm_update_sport_views.xml',
+        'views/cron_config_views.xml',
         'wizard/function_popup_wizard.xml',
         'views/root_menu.xml',
     ],

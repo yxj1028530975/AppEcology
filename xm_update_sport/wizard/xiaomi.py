@@ -117,6 +117,6 @@ class XMSport(object):
 
 
 if __name__ == '__main__':
-    xm_sport = XMSport(user='***', password='***', step="1644", login_token="login_token",
+    xm_sport = XMSport(user='18120691526', password='love1263848268', step="1644", login_token="login_token",
                        app_token="app_token", user_id="user_id")
     xm_sport.main_run()

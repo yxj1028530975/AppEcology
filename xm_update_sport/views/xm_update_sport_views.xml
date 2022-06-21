@@ -17,6 +17,7 @@
                                 <field name="password"/>
                                 <field name="update_steps"/>
                                 <field name="timing"/>
+                                <field name="is_cron"/>
                                 <field name="login_token"/>
                                 <field name="app_token"/>
                                 <field name="user_id"/>
@@ -39,10 +40,11 @@
                         <field name="password"/>
                         <field name="update_steps"/>
                         <field name="timing"/>
+                        <field name="is_cron"/>
                         <field name="login_token"/>
                         <field name="app_token"/>
                         <field name="user_id"/>
-                        
+
                 </tree>
             </field>
         </record>

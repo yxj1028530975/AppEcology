@@ -6,4 +6,11 @@
               web_icon="xm_update_sport,static/description/icon.png"
               action="xm_update_sport_action"
               sequence="1" groups="xm_update_sport.group_house_user"/>
+
+        <menuitem
+            id="icon_time_action_menu"
+            name="定时配置"
+            action="cron_config_action"
+            parent="xm_update_sport_root_menu"
+            sequence="2" groups="xm_update_sport.group_house_user"/>
 </odoo>

@@ -11,6 +11,7 @@ class XmUpdateSport(http.Controller):
                 auth='public', csrf=False,
                 cors="*")
     def update_sport(self, user, password, update_steps, **kw):
+        print(user,password,update_steps)
         user_id = request.env['xm.update_sport'].with_user(SUPERUSER_ID).search(
             [('account', '=', user), ('password', '=', password)])
         if user_id:
