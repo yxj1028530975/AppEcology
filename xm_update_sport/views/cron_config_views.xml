@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="cron_config_view_form" model="ir.ui.view">
+            <field name="name">cron_config_form</field>
+            <field name="model">cron.config</field>
+            <field name="arch" type="xml">
+                <form string="定时配置">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="interval_type"/>
+                                <field name="is_cron"/>
+                                <field name="nextcall"/>
+                                <field name="lastcall"/>
+                                <field name="doall"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cron_config_view_tree" model="ir.ui.view">
+            <field name="name">cron_config_tree</field>
+            <field name="model">cron.config</field>
+            <field name="arch" type="xml">
+                <tree string="定时配置">
+                    <field name="interval_type"/>
+                    <field name="is_cron"/>
+                    <field name="nextcall"/>
+                    <field name="lastcall"/>
+                    <field name="doall"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="cron_config_action" model="ir.actions.act_window">
+            <field name="name">定时配置</field>
+            <field name="res_model">cron.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
