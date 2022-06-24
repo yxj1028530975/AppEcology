@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="img_category_view_form" model="ir.ui.view">
+            <field name="name">img_category_form</field>
+            <field name="model">img.category</field>
+            <field name="arch" type="xml">
+                <form string="图床分类">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="parent_id"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="img_category_view_tree" model="ir.ui.view">
+            <field name="name">img_category_tree</field>
+            <field name="model">img.category</field>
+            <field name="arch" type="xml">
+                <tree string="图床分类">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="img_category_action" model="ir.actions.act_window">
+            <field name="name">图床分类</field>
+            <field name="res_model">img.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

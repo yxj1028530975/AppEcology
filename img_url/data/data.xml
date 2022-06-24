@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data noupdate="1">
+
+        <!-- Default message text preview length -->
+        <record id="emergency_broadcast_preview_length" model="ir.config_parameter">
+            <field name="key">emergency_broadcast.base_url</field>
+            <field name="value">https://36.249.121.135:1445</field>
+        </record>
+    </data>
+</odoo>

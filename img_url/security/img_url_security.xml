@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="img_url_category" model="ir.module.category">
+            <field name="name">图床</field>
+        </record>
+
+        <record id="group_house_user" model="res.groups">
+            <field name="name">用户</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="img_url_category"/>
+        </record>
+
+        <record id="group_house_admin" model="res.groups">
+            <field name="name">管理员</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="img_url_category"/>
+        </record>
+
+        <record model="ir.rule" id="xm_img_url_look_my">
+            <field name="name">只查看自己</field>
+            <field name="model_id" ref="model_img_url"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+            <field name="groups" eval="[(4, ref('img_url.group_house_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="xm_img_url_look_all">
+            <field name="name">查看所有人</field>
+            <field name="model_id" ref="model_img_url"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('img_url.group_house_admin'))]"/>
+        </record>
+    </data>
+</odoo>

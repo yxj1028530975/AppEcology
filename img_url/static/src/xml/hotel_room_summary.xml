@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="img_url.copy">
+        <div style="overflow:auto;">
+            <button type="button" class="btn btn-primary table_header"  data-toggle="modal" data-target="#myModal">复制
+            </button>
+        </div>
+    </t>
+</templates>

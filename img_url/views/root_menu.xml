@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+
+    <menuitem name="图床"
+              id="img_url_root_menu"
+              web_icon="img_url,static/description/icon.png"
+              action="img_url_action"
+              sequence="1"
+              groups="img_url.group_house_user"
+
+    />
+        <menuitem id="imgUrl_config_settings_menu_action" name="配置" parent="img_url_root_menu"
+            sequence="2" action="img_config_settings_action" groups="img_url.group_house_user"/>
+
+            <menuitem id="img_category_menu_action" name="分类" parent="img_url_root_menu"
+            sequence="3" action="img_category_action" groups="img_url.group_house_user"/>
+</odoo>

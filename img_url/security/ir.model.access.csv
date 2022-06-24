@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_img_url,img_url,model_img_url,base.group_user,1,1,1,1
+access_img_config_settings,img_config_settings,model_img_config_settings,base.group_user,1,1,1,1
+access_img_category,img_category,model_img_category,base.group_user,1,1,1,1
+access_img_url_popup_wizard,img_url_popup_wizard,model_img_url_popup_wizard,base.group_user,1,1,1,1
