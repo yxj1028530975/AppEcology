@@ -43,6 +43,22 @@
 替换模块 替换 myaddons 有空完善
 
 ## 更新日志
+2022-6-27
+1.更新了docker_compose的使用
+使用方式:git clone https://github.com/yxj1028530975/AppEcology
+
+cd AppEcology/docker_compose
+
+docker-compose up -d
+
+即可启动项目
+
+映射端口:8369
+
+开放服务器端口8369 
+
+访问地址:http://公网ip:8369 即可启动项目
+
 2022-6-24
 1.图床上传
 2.完善复制链接功能
