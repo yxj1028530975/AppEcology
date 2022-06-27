@@ -22,11 +22,17 @@
 ## 启动部署
 运用docker-compose进行部署
 1.[安装docker](https://www.runoob.com/docker/ubuntu-docker-install.html)  
+
 2.[安装docker-compose](https://www.runoob.com/docker/docker-compose.html)  
+
 3.mkdir AppEcology
+
 4.cd AppEcology
+
 5.git clone https://github.com/yxj1028530975/AppEcology
+
 6.cd AppEcology/docker_compose
+
 7.docker-compose up -d
 
 ### 环境准备
