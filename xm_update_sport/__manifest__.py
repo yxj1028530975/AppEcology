@@ -30,7 +30,10 @@
     ],
     'demo': [
     ],
+    'external_dependencies': {
+        'python': ['cryptography']
+    },
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
 }

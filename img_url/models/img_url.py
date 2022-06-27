@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
-import pyperclip
 
 
 class ImgUrl(models.Model):
@@ -73,8 +72,6 @@ class ImgUrl(models.Model):
         """
         它将当前选项卡的 URL 复制到剪贴板
         """
-        for r in self:
-            pyperclip.copy(r.link)
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',

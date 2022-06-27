@@ -19,6 +19,18 @@
 ## api接口文档
 [api接口文档](https://www.apifox.cn/apidoc/shared-5f9cf208-339e-4a35-8de1-386f1077ae9a)
 
+## 启动部署
+运用docker-compose进行部署
+1.[安装docker](https://www.runoob.com/docker/ubuntu-docker-install.html)  
+2.[安装docker-compose](https://www.runoob.com/docker/docker-compose.html)  
+3.mkdir AppEcology
+4.cd AppEcology
+5.git clone https://github.com/yxj1028530975/AppEcology
+6.cd AppEcology/docker_compose
+7.docker-compose up -d
+
+### 环境准备
+
 ## TODO
 1.慢慢来。。。
 
@@ -35,14 +47,15 @@
 | ![图床模块](http://124.221.153.111:8069//web/content/511?access_token=874f33ec-f964-41a0-baa5-d71b4e31bb1f)     | ![模块管理](https://www.youlai.tech/files/blog/stock.png)  |
 待更新....
 
-## 启动部署
 
-### 环境准备
 
 [安装odoo15](https://github.com/odoo/odoo)  
 替换模块 替换 myaddons 有空完善
 
 ## 更新日志
+2022-6-27
+1.修复安装依赖bug
+
 2022-6-27
 1.更新了docker_compose的使用
 使用方式:git clone https://github.com/yxj1028530975/AppEcology
