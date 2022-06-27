@@ -1,0 +1,27 @@
+--- 
+services: 
+  db: 
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    image: "postgres:10"
+    restart: always
+    volumes: 
+      - "odoo-db-data:/var/lib/postgresql/data/pgdata"
+  web: 
+    command: "/usr/bin/odoo -c /etc/odoo/odoo.conf"
+    image: "odoo:15.0"
+    ports: 
+      - "8369:8069"
+      - "8000:22"
+    restart: always
+    volumes: 
+      - "odoo-web-data:/var/lib/odoo"
+      - "./conf:/etc/odoo"
+      - "../../AppEcology:/mnt/extra-myaddons"
+version: "3"
+volumes: 
+  odoo-db-data: ~
+  odoo-web-data: ~
